@@ -1,0 +1,70 @@
+------------------------------
+Network Reconnaissance Report
+------------------------------
+
+Date: 2025-06-23
+User: keert (Windows 10)
+
+1. Nmap Version:
+----------------
+Executed:
+nmap -v
+
+Output:
+Starting Nmap 7.97 ( https://nmap.org ) at 2025-06-23 21:20 +0530
+WARNING: No targets were specified, so 0 hosts scanned.
+
+2. Identifying Local IP Range:
+------------------------------
+Command:
+ipconfig
+
+Result:
+IPv4 Address  : 192.168.1.3
+Subnet Mask   : 255.255.255.0
+=> IP Range   : 192.168.1.0/24
+
+3. TCP SYN Scan to Self IP:
+---------------------------
+Command:
+nmap -sS -v 192.168.1.3
+
+Scan Output:
+Discovered open ports:
+- 135/tcp => msrpc
+- 139/tcp => netbios-ssn
+- 445/tcp => microsoft-ds
+
+4. Saving Scan Results:
+-----------------------
+Command:
+nmap -sS 192.168.1.3 -oN "C:\Users\keert\Documents\nmap_scan.txt"
+
+Result:
+File saved successfully at:
+C:\Users\keert\Documents\nmap_scan.txt
+
+5. Scan Summary (from saved file):
+----------------------------------
+Host is up (0.00061s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT    STATE SERVICE
+135/tcp open  msrpc
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+
+6. Analysis of Open Ports:
+--------------------------
+- Port 135 (msrpc): Windows RPC service, can be abused if unpatched.
+- Port 139 (netbios-ssn): Used for file/printer sharing; vulnerable in older systems.
+- Port 445 (microsoft-ds): SMB file sharing, a common attack target (e.g., WannaCry).
+
+7. Notes:
+---------
+✅ Scan completed successfully.
+✅ Scan result saved.
+⚠️ These ports are common vectors for exploitation if not protected by firewall.
+
+------------------------------
+End of Report
+------------------------------
