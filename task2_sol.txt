@@ -1,0 +1,129 @@
+Phishing Email Investigation Report 
+
+Email Subject: Urgent: Your PayPal account has been limited!
+
+Step-by-Step Analysis Performed
+
+1. Obtained a Sample Email
+
+From: PayPal Support <support@paypa1.com>  
+To: keerthivasaneofficial@gmail.com  
+Subject: Urgent: Your PayPal account has been limited!  
+Date: Wed, 25 June 2025 10:23:44 +0530  
+Return-Path: <fake-return@maliciousdomain.xyz>  
+Received: from unknownhost.maliciousdomain.xyz ([213.45.77.18]) 
+
+---
+
+Dear customer,
+
+We noticed suspicious activity in your PayPal account.  
+For your protection, your account has been temporarily limited.
+
+To restore access, please verify your identity immediately.
+
+👉 Click here to verify:  
+https://paypal.com.secureverify-account.ru
+
+Failure to act within 24 hours will result in permanent suspension of your account.
+
+Sincerely,  
+PayPal Security Team
+
+---
+
+Attachment: `Invoice_8273.zip` 
+
+
+Used a fake example for training purposes.
+
+Email looked like it came from PayPal, saying the account was limited.
+
+2. Checked the Sender Email Address
+
+Email shown: support@paypa1.com
+
+Issue found: This is a spoofed domain. It uses the number 1 instead of the letter l to trick the user.
+
+3. Viewed and Analyzed the Email Header
+
+Opened the full email header (simulated through Gmail-style method: "Show Original").
+
+Pasted it into MxToolbox Email Header Analyzer.
+
+Findings:
+
+Return-Path didn't match sender.
+
+Email came from an unknown server, not owned by PayPal.
+
+SPF/DKIM likely failed.
+
+4. Hovered Over Links
+
+Link shown in email: https://paypal.com.secureverify-account.ru
+
+Real domain: secureverify-account.ru (not PayPal)
+
+Used hover (without clicking) to view actual link.
+
+Conclusion: Link is misleading and dangerous.
+
+5. Read the Email Body for Urgent Language
+
+Found lines like: “Verify your identity immediately” and “Your account will be permanently suspended.”
+
+This is a scare tactic commonly used in phishing attacks.
+
+6. Checked for Grammar & Personalization
+
+Found grammar issues, awkward sentences.
+
+Email used “Dear customer” instead of a real name — a red flag.
+
+7. Attachment Check
+
+No attachments in this email, but learned that .zip, .exe, .xlsm are common phishing file types.
+
+Tools like VirusTotal can be used to scan them.
+
+Summary of Phishing Traits Found:
+
+Spoofed sender address (support@paypa1.com)
+
+Misleading and dangerous link (paypal.com.secureverify-account.ru)
+
+Header mismatch (return-path, IP, and SPF issues)
+
+Urgent and threatening language
+
+Generic salutation (“Dear customer”)
+
+Grammar errors in email content
+
+Tools Used :
+
+Task
+
+Tool Used
+
+Header analysis
+
+MxToolbox (https://mxtoolbox.com/EmailHeaders.aspx)
+
+URL safety check
+
+Hover over links / use VirusTotal
+
+Email review
+
+Any inbox with "Show Original" option (e.g., Gmail)
+
+Final Thoughts:
+
+You now know how to check any suspicious email for phishing! This method can help prevent cyber attacks and identity theft. Always think twice before clicking any email link.
+
+Stay safe!
+
+Keerthivasan E
+Intern At Elevate Labs
